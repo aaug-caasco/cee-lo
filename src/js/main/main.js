@@ -165,14 +165,16 @@ let ceeLoGame = {
     disableButtons: () => {
         for (let i = 0; i < ceeLoGame.config.rollButtonArray.length; i++) {
             ceeLoGame.config.rollButtonArray[i].disabled = true;
-
+            ceeLoGame.config.rollButtonArray[i].classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow opacity-50 pointer-events-none";
         };
     },
 
     disablePlayer1: () => {
         for (let i = 0; i < ceeLoGame.config.rollButtonArray.length; i++) {
             ceeLoGame.config.rollButtonArray[0].disabled = true;
+            ceeLoGame.config.rollButtonArray[0].classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow opacity-50 pointer-events-none";
             ceeLoGame.config.rollButtonArray[1].disabled = false;
+            ceeLoGame.config.rollButtonArray[i].classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow";
 
         };
     },
@@ -180,7 +182,9 @@ let ceeLoGame = {
     disablePlayer2: () => {
         for (let i = 0; i < ceeLoGame.config.rollButtonArray.length; i++) {
             ceeLoGame.config.rollButtonArray[0].disabled = false;
+            ceeLoGame.config.rollButtonArray[i].classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow";
             ceeLoGame.config.rollButtonArray[1].disabled = true;
+            ceeLoGame.config.rollButtonArray[1].classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow opacity-50 pointer-events-none";
 
         };
     },
@@ -652,11 +656,11 @@ let ceeLoGame = {
     eventHandlers: () => {
 
         // TESTING BUTTON *************************
-        let testButton = document.getElementById("testButton");
-        testButton.addEventListener("click", () => {
-            // console.log(this);
-            ceeLoGame.gameRound();
-        });
+        // let testButton = document.getElementById("testButton");
+        // testButton.addEventListener("click", () => {
+        //     // console.log(this);
+        //     ceeLoGame.gameRound();
+        // });
 
         // console.log(testButton);
         //*************************
@@ -671,6 +675,7 @@ let ceeLoGame = {
         startButton.addEventListener("click", () => {
             ceeLoGame.startGame();
             startButton.disabled = true;
+            startButton.classList = "bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow opacity-50 pointer-events-none";
 
         });
     },
